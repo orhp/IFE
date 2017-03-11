@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>任务四</title>
+    <style type="text/css">
+
+        #cont div{
+        height: 50px;
+        float:left;
+        line-height: 50px;
+        margin: 10px 5px;
+        padding: 0 10px;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" id="num">
+    <input type="button" id="leftin"  value="左侧入" onclick="leftin()">
+    <input type="button" id="rightin"  value="右侧入" onclick="rightin()">
+    <input type="button" id="leftout"  value="左侧出" onclick="leftout()">
+    <input type="button" id="rightout"  value="右侧出" onclick="rightout()">
+    <div id="cont"></div>
+</body> 
+
+<script type="text/javascript">
+//创建数组储存输入数据
+var arr=new Array();
+
+//创建元素  
+function add(){                               
+    var cont=document.getElementById('cont');
+    cont.innerHTML=null;
+    for(i=0;i<arr.length;i++){
+        var div1=document.createElement('div');
+        cont.appendChild(div1);
+        div1.innerHTML=arr[i];
+        div1.style.background='red';
+    }
+}
+
+
+//按钮所绑定的输入输出函数
+function leftin(){
+    var num=document.getElementById('num').value;
+    arr.unshift(num);
+    add();
+}
+function rightin(){
+    var num=document.getElementById('num').value;
+    arr.push(num);
+    add();
+}
+function leftout(){
+    ele=arr.shift();
+    add();
+    alert(ele);
+}
+function rightout(){
+    ele=arr.pop();
+    add();
+    alert(ele);
+}
+
+
+//绑定点击删除事件
+var cont=document.getElementById('cont');
+cont.addEventListener('click',function(e){
+    var ele=e.target;
+    for(i=0;i<cont.childNodes.length;i++){
+        if(cont.childNodes[i]==ele){
+        arr.splice(i,1);
+        add();
+        }
+    }
+})
+
+</script>
+</html>
