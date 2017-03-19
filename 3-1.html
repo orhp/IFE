@@ -47,12 +47,13 @@
     var len = 0;
 	    for (var i=0; i<str.length; i++) { 
 		    var c = str.charCodeAt(i); 
-		    if ((c >= 0x0001 && c <= 0x007e) || (0xff60<=c && c<=0xff9f)) { 
+		    if (c<255) { 
 		       len++; 
 		    } else { 
 		    	len+=2; 
 	     	} 
 	    } 
+	    console.log(len)
 	    return len;
 	}
 	function verify(){
@@ -63,8 +64,12 @@
 			prompt.innerHTML="名称格式正确";
 			prompt.style.color="#60ba49";
 			input.style.borderColor='#60ba49';
-		}else{
+		}else if(input.value==''){
 			prompt.innerHTML="姓名不能为空";
+			prompt.style.color="red";
+			input.style.borderColor="red";
+		}else{
+			prompt.innerHTML="长度为4~16个字符";
 			prompt.style.color="red";
 			input.style.borderColor="red";
 		}
