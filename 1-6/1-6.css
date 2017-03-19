@@ -1,0 +1,355 @@
+body{
+	width: 890px;
+	margin: auto;
+	font-family: "Microsoft YaHei";
+}
+header{
+	height: 61px;
+	width: 100%;
+	font-size: 12px;
+	font-family: '黑体';
+	position: relative;
+	border-bottom: 2px solid rgb(147,142,140)
+}
+header div{
+	height: 61px;
+	width: 110px;
+	background: rgb(212,93,92); 
+	color: #fff;
+	position: relative;
+}
+header div span{
+	position: absolute;
+	bottom: 0px;
+	left: 5px;
+}
+header time{
+	color: rgb(212,93,92);
+	position: absolute;
+	bottom: 0px; 
+	right: 0px;
+}
+
+.topleft{
+	margin-top: 35px;
+	width: 640px;
+	position: relative;
+}
+.topleft .green{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.topleft .red{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.topright{
+	float: right;
+	width: 205px;
+	margin-top: 35px;
+	padding-top: 12px;
+	border-top: 2px solid rgb(204,128,145)
+}
+.topright .h{
+  font-size: 24px;
+  color: rgb(4, 0, 0);
+  text-decoration: underline;
+  font-variant: small-caps;
+  margin: 0px;
+}
+.about{
+  font-size: 12px;
+  font-family: "KaiTi";
+  color: rgb(103, 103, 103);
+  line-height: 0.833;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+._700 {
+  font-size: 95px;
+  line-height: 0.8;
+  color: rgb(117, 184, 107);
+  margin-top:45px;
+
+}
+._32 {
+  font-size: 55px;
+  color: rgb(204, 128, 145);
+  line-height: 1;
+  margin-left: 10px;
+  margin-top: 30px;
+  float: left;
+}
+.css{
+	float: left;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+.css1{
+    font-size: 21px;
+    margin: 0px;
+    color: rgb(204, 128, 145);
+}
+.css2{
+    font-size: 12px;
+    margin: 0px;
+}
+
+
+
+.cenbox{
+	margin-top: 40px;
+	height: auto;
+	overflow: hidden;
+	font-size: 12px;
+    font-family: "SimSun";
+    color: rgb(118, 119, 119);
+    line-height: 1.75;
+}
+.cenbox div{
+  float: left;
+  margin-right: 30px;
+}
+.What{
+	width: 230px;
+}
+.When{
+	width: 205px;
+}
+.How{
+	width: 130px;
+}
+.cenbox h2{
+  font-size: 16px;
+  text-decoration: underline;
+  line-height: 0.524;
+}
+.What h2{
+  color: rgb(65, 140, 89);
+}
+.When h2{
+	color: rgb(210, 153, 79);
+}
+.How h2{
+	color: rgb(204, 118, 128);
+}
+.How span{
+	color: rgb(212,93,92);
+}
+
+
+.bottom{
+	margin-top: 73px;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+}
+.btmleft{
+	width: 415px;
+	float: left;
+}
+.btmleft img{
+	float: right;
+	margin:20px 9px 0 23px ;
+}
+.btmleft h1{
+  font-size: 42px;
+  font-family: "SimHei";
+  color: rgb(17, 69, 107);
+  margin: 0px;
+}
+.btmleft h2{
+  font-size: 33px;
+  font-family: "SimHei";
+  margin: 0px;
+  line-height: 55px;
+  color: rgb(17, 69, 107);
+  border-bottom: 2px solid rgb(17, 69, 107)
+}
+.btmleft{
+  font-size: 12px;
+  font-family: "SimSun";
+  color: rgba(118, 119, 119, 0.702);
+  line-height: 1.333;
+}
+.btmleft .h{
+  font-size: 70px;
+  font-family: "Microsoft YaHei";
+  color: rgb(245, 227, 39);
+  margin: 0px;
+  float: left;
+  line-height: 1;
+}
+
+
+.btmleft h1 em{
+  font-size: 72px;
+  color: rgb(245, 227, 39);
+  line-height: 0.571;
+}
+
+
+.btmright{
+	width: 458px;
+	float: right;
+}
+.BRT{
+	height: 60px;
+	background: url(images/配图二.png);
+	padding-top: 197px;
+	z-index: 10;
+}
+.灰度条{
+	height: 60px;
+	box-sizing: border-box;
+	background: rgba(4,0,0,0.4);
+	padding: 8px 38px;
+}
+.灰度条 div{
+	height: 44px;
+	box-sizing: border-box;
+	border-left:3px solid rgb(114,177,106);
+	padding: 12px;
+	font-size: 26px;
+	line-height: 20px;
+	color: #fff;
+}
+.灰度条 div em{
+  font-size: 12px;
+  color: rgb(114, 177, 106);
+  line-height: 1;
+}
+
+
+.BRB{
+	height: 317px;
+	background: rgb(238,237,214);
+	margin-top: 30px;
+	position: relative;
+	box-sizing: border-box;
+	padding-top: 30px;
+}
+.BRB ._1{
+	line-height: 40px;
+	width: auto;
+	margin: 0 0px 30px 30px;
+}
+.BRB .up{
+	position: relative;
+	height: 30px;
+	margin-bottom: 10px;
+}
+.BRB .up .tng{
+	width: 0;
+	height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid red;
+    position: absolute;
+    top: 5px;
+} 
+.BRB .up p{
+	position: absolute;
+	left: 15px;
+	top: 0px;
+	margin: 0;
+	line-height: 1.25;
+ 	font-size: 16px;
+  	font-family: "SimSun";
+  	color: rgb(90, 91, 91);
+}
+
+._0{
+	width: 260px;
+	height: 160px;
+	background: rgb(212,93,92);
+	position: absolute;
+	bottom: 0px;
+	padding: 40px 15px;
+	box-sizing: border-box;
+	color: rgb(255, 255, 255);
+}
+
+._01{
+  font-size: 110px;
+  line-height: 85px;
+  width: 65px;
+  border-right: 2px solid #fff;
+}
+._02{
+	position: absolute;
+	left: 90px;
+	top: 45px;
+}
+
+._02a{
+  font-size: 21px;
+  font-family: "SimHei";
+  line-height: 1.143;
+}
+._02b{
+  font-size: 12px;
+  font-family: "SimHei";
+  color: rgb(255, 255, 255);
+}
+
+
+._r{
+	box-sizing: border-box;
+	width: 198px;
+	padding: 15px;
+	position:absolute;
+	right: 0px; 
+	font-size: 14px;
+  	font-family: "SimHei";
+  	color: rgb(90, 91, 91);
+}
+._r .引号1{
+	font-size: 72px;
+	position: absolute;
+	left: -25px;
+	top: -25px;
+ 	font-family: "SimHei";
+  	color: rgb(212, 93, 92);
+}
+._r .引号2{
+	font-size: 72px;
+	position: absolute;
+	right: -20px;
+	bottom: -45px;
+ 	font-family: "SimHei";
+  	color: rgb(212, 93, 92);
+}
+
+._ {
+  font-size: 72px;
+  font-family: "SimHei";
+  color: rgb(212, 93, 92);
+  line-height: 0.083;
+  position: absolute;
+  left: 898.094px;
+  top: 1259.794px;
+  z-index: 18;
+}
+
+
+
+footer{
+	font-size: 12px;
+  	font-family: "SimHei";
+  	margin-top: 40px;
+  	height: 60px;
+	border-top: 1px solid rgb(147,142,140);
+}
+footer span{
+	float: right;
+  color: rgb(212, 93, 92);
+}
+
+
+
+
+
