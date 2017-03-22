@@ -310,6 +310,7 @@ header time{
 ._r .引号1{
 	font-size: 72px;
 	position: absolute;
+	height: 15px;
 	left: -25px;
 	top: -25px;
  	font-family: "SimHei";
@@ -323,18 +324,6 @@ header time{
  	font-family: "SimHei";
   	color: rgb(212, 93, 92);
 }
-
-._ {
-  font-size: 72px;
-  font-family: "SimHei";
-  color: rgb(212, 93, 92);
-  line-height: 0.083;
-  position: absolute;
-  left: 898.094px;
-  top: 1259.794px;
-  z-index: 18;
-}
-
 
 
 footer{
