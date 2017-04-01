@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>任务四</title>
+    <style type="text/css">
+
+        #cont div{
+        height: 50px;
+        float:left;
+        line-height: 50px;
+        margin: 10px 5px;
+        padding: 0 10px;
+    }
+    </style>
+</head>
+<body>
+    <textarea id="num"></textarea>
+    <input type="button" id="leftin"  value="左侧入" onclick="leftin()">
+    <input type="button" id="rightin"  value="右侧入" onclick="rightin()">
+    <input type="button" id="leftout"  value="左侧出" onclick="leftout()">
+    <input type="button" id="rightout"  value="右侧出" onclick="rightout()">
+    <textarea id="num_q"></textarea>
+    <input type="button" id="query" value="查询">
+    <div id="cont"></div>
+</body> 
+
+<script type="text/javascript">
+//创建数组储存输入数据
+var arr=new Array();
+
+//创建元素  
+function add(){                               
+    var cont=document.getElementById('cont');
+    cont.innerHTML=null;
+    for(i=0;i<arr.length;i++){
+        var div1=document.createElement('div');
+        cont.appendChild(div1);
+        div1.innerHTML=arr[i];
+        div1.style.background='red';
+    }
+}
+
+//获取输入框输入字符串转换为数组
+function aqidata(num){
+    var str=num.trim();
+    document.getElementById('num').value=null;
+    return str.split(/[\r,，、\s]/);
+}
+
+//对数组进行查找匹配
+function match(){
+    var num_q=document.getElementById('num_q').value;
+    var re =new RegExp(num_q);
+    var cont=document.getElementById('cont');
+    var arr_cont=cont.childNodes;
+    for(i=0;i<arr.length;i++){
+        if(re.exec(arr[i])!=null){
+            arr_cont[i].style.background='yellow';
+        }else{
+            arr_cont[i].style.background='red';
+        }
+    }
+}
+
+//按钮所绑定的输入输出
+function leftin(){
+    var num=document.getElementById('num').value;
+    var inarr=aqidata(num);
+    for(i=0;i<inarr.length;i++){
+        if(inarr[i]!=''){
+            arr.unshift(inarr[i]);
+        }
+    }
+    add(); 
+}
+function rightin(){
+    var num=document.getElementById('num').value;
+    var inarr=aqidata(num);
+    for(i=0;i<inarr.length;i++){
+        if(inarr[i]!=''){
+            arr.push(inarr[i]);
+        }
+    }
+    add();
+}
+function leftout(){
+    ele=arr.shift();
+    add();
+    alert(ele);
+}
+function rightout(){
+    ele=arr.pop();
+    add();
+    alert(ele);
+}
+
+
+//绑定点击删除事件
+var cont=document.getElementById('cont');
+cont.addEventListener('click',function(e){
+    var ele=e.target;
+    for(i=0;i<cont.childNodes.length;i++){
+        if(cont.childNodes[i]==ele){
+        arr.splice(i,1);
+        add();
+        }
+    }
+})
+
+//绑定点击查询事件
+document.getElementById('query').addEventListener('click',match)
+
+</script>
+</html>
