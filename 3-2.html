@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3-2</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+		}
+		form{
+			font-size: 21px;
+			font-family: '微软雅黑';
+			width: 700px;
+		}
+		label{
+			width: 150px;
+			display: inline-block;
+			text-align:right;
+			margin-right: 20px;
+		}
+		.inbox,.btn{
+			height: 60px;
+			border-radius: 10px;
+			font-size: 25px;
+			box-sizing: border-box;
+		}
+		.inbox{
+			border: 2px solid #ccc;
+			margin-top: 30px;
+			width: 500px;
+		}
+		.inbox:focus{
+			outline: none;
+			border-color: #6182fb;
+			box-shadow: 0 0 5px #6182fb;
+		}
+		.btn{
+			width: 100px;
+			border: none;
+			background:  #3355d0;
+			color: #fff;
+			margin:30px 575px;
+		}
+		.prompt{
+			margin-left: 180px;
+			line-height: 2;
+			color: #ccc;
+			display: none;
+		}
+		.right{
+			margin-left: 180px;
+			color:#60ba49;
+			border-color: #60ba49;
+		}
+		.error{
+			margin-left: 180px;
+			color:red;
+			border-color: red;
+		}
+	</style>
+</head>
+<body>
+	<form onsubmit="return form()">
+		<label class="label" >名称</label>
+		<input type="text" id="user" class="inbox" value="">
+		<div class="prompt" id="user_msg">必填，长度为4~16个字符</div>
+		<label class="label">密码</label>
+		<input type="password" id="password1" class="inbox" value="">
+		<div class="prompt" id="password1_msg">请输入密码</div>
+		<label class="label">密码确认</label>
+		<input type="password" id="password2" class="inbox" value="">
+		<div class="prompt" id="password2_msg">再次输入相同密码</div>
+		<label class="label">邮箱</label>
+		<input type="text" id="email" class="inbox" value="">
+		<div class="prompt" id="email_msg"></div>
+		<label class="label">手机</label>
+		<input type="text" id="phone" class="inbox" value="">
+		<div class="prompt" id="phone_msg"></div>
+		<button type="submit" class="btn" id="button">提交</button>
+	</form>
+</body>
+<script type="text/javascript">
+	function strlen(str){
+    var len = 0;
+	    for (var i=0; i<str.length; i++) { 
+		    var c = str.charCodeAt(i); 
+		    if (c<255) { 
+		       len++; 
+		    } else { 
+		    	len+=2; 
+	     	} 
+	    } 
+	    console.log(len)
+	    return len;
+	}
+	function user(){
+		var input=document.getElementById('user');
+		var message=document.getElementById('user_msg');
+		var len=strlen(input.value);
+		if(len>=4&&len<=16){
+			message.innerHTML="名称格式正确";
+			message.className="right";
+			return true;
+		}else if(input.value==''){
+			message.innerHTML="姓名不能为空";
+			message.className="error";
+			return false;
+		}else{
+			message.innerHTML="长度为4~16个字符";
+			message.className="error";
+			return false;
+		}
+	}
+
+	function password1(){
+		var input=document.getElementById('password1');
+		var message=document.getElementById('password1_msg');
+		if(input.value==''){
+			message.innerHTML="密码不能为空";
+			message.className="error";
+			return false;
+		}else{
+			message.innerHTML="密码可用";
+			message.className="right";
+			return true;
+		}
+	}
+	function password2(){
+		var input=document.getElementById('password2');
+		var message=document.getElementById('password2_msg');
+		var input1=document.getElementById("password1");
+		if(input.value==''){
+			message.innerHTML="密码不能为空";
+			message.className="error";
+			return false;
+		}else if(input.value==input1.value){
+			message.innerHTML="密码输入一致";
+			message.className="right";
+			return true;
+		}else{
+			message.innerHTML="密码输入不一致";
+			message.className="error";
+			return false;
+		}
+	}
+	function email(){
+		var input=document.getElementById('email');
+		var message=document.getElementById('email_msg');
+		if(input.value==''){
+			message.innerHTML="邮箱不能为空";
+			message.className="error";
+			return false;
+		}else if(/\w+@\w+.(com|cn)/.test(input.value)){
+			message.innerHTML="邮箱格式正确";
+			message.className="right";
+			return true;
+		}else{
+			message.innerHTML="邮箱格式错误";
+			message.className="error";
+			return false;
+		}
+	}
+	function phone(){
+		var input=document.getElementById('phone');
+		var message=document.getElementById('phone_msg');
+		if(input.value==''){
+			message.innerHTML="邮箱不能为空";
+			message.className="error";
+			return false;
+		}else if(/\d{11}/.test(input.value)){
+			message.innerHTML="手机格式正确";
+			message.className="right";
+			return true;
+		}else{
+			message.innerHTML="手机格式错误";
+			message.className="error";
+			return false;
+		}
+	}
+	/*********获得焦点时********/
+	function remind(ele){
+		var message=document.getElementById(ele.id+'_msg');
+		message.style.display='block';
+	}
+	/*********点击提交*********/
+	function form(){
+		user();
+		password1();
+		password2();
+		email();
+		phone();
+		if(user()&&password1()&&password2()&&email()&&phone()){
+			return true;
+		}else{
+			alert('输入有误');
+			return false;
+		}
+	}
+
+	/*********事件监听********/
+	document.getElementById("user").addEventListener("blur",user);    
+	document.getElementById("password1").addEventListener("blur",password1); 
+	document.getElementById("password2").addEventListener("blur",password2);
+	document.getElementById("email").addEventListener("blur",email); 
+	document.getElementById("phone").addEventListener("blur",phone);
+	var  input=document.getElementsByTagName('input');
+	for(i=0;i<input.length;i++){
+		input[i].addEventListener('focus',function(event){
+			var event=event?event:window.event;
+			var ele=event.target;
+			remind(ele);
+		})
+	}
+</script>
+</html>

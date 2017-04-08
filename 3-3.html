@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3-3</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		form{
+			text-align:center;
+			font-family: '微软雅黑';
+		}
+		.radio{
+
+		}
+		label{
+			line-height: 34px;
+		}
+		#selbox{
+			margin-top: 30px;
+		}
+		#selbox>input,select{
+			border:1px solid #ccc;
+			border-radius: 3px;
+			margin-left: 30px;
+			height: 30px;
+		}
+		#selbox>input{
+			width: 400px;
+		}
+		#selbox>select{
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<form id="form">
+		<input type="radio" id="radio1" class='radio' name='radio' value="在校生">在校生
+		<input type="radio" id="radio2" class='radio' name="radio" value="非在校生">非在校生<br>
+		<div id="selbox"></div>
+	</form>
+</body>
+	<script type="text/javascript">
+		function city(){
+			var selbox=document.getElementById('selbox');
+			selbox.innerHTML='';
+			var label=document.createElement('label');
+			label.innerHTML='学校';
+			var city=document.createElement('select');
+			var school=document.createElement('select');
+			selbox.appendChild(label);
+			selbox.appendChild(city);
+			selbox.appendChild(school);
+			var arr=new Array();
+				arr['北京']=['北京大学','清华大学'];
+				arr['上海']=['复旦大学','同济大学'];
+			for(temp in arr){
+				city.add(new Option(temp,temp));
+			}
+			schools(city,arr,school);
+			city.addEventListener('change',function(){
+				console.log(1)
+				schools(city,arr,school);
+			})
+		}
+		function schools(city,arr,school){
+			var temp=city.value;
+			school.options.length=0;
+			for(i=0;i<arr[temp].length;i++){
+				school.add(new Option(arr[temp][i],arr[temp][i]))
+			}
+		}
+		function job(){
+			var selbox=document.getElementById('selbox');
+			selbox.innerHTML='';
+			var label=document.createElement('label');
+			var textjob=document.createElement('input');
+			label.innerHTML='就业单位';
+			selbox.appendChild(label);
+			selbox.appendChild(textjob);
+			textjob.type='text';
+		}
+		document.getElementById("radio1").addEventListener("click",city); 
+		document.getElementById("radio2").addEventListener("click",job);
+
+	</script>
+</html>
