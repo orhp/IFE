@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>树二</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#origin{
+			height: 200px;
+			width: 800px;
+			margin:100px auto;
+			font-size: 21px;
+		}
+		.box{
+			height: 70%;
+			width: 30%;
+			border:2px solid #89afc1;
+			display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 5px;
+            background: #FFF;
+		}
+		.btn{
+			text-align: center;
+		}
+		button{
+			height: 40px;
+			width: 100px;
+			margin:20px;
+			border:none;
+			border-radius: 3px;
+			background:#89afc1;
+			color: #FFF;
+			font-size: 21px;
+		}
+		#text{
+			height: 36px;
+			border:2px solid #89afc1;
+			font-size: 21px;
+		}
+	</style>
+</head>
+<body>
+	<div id="origin" class="box">
+		<div class="box">
+			<div class="box">
+				<div class="box"></div>
+			</div>
+			<div class="box">
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+			<div class="box">
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+		<div class="box">
+				<div class="box"></div>
+				<div class="box"></div>
+		</div>
+		<div class="box">
+			<div class="box">
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+			<div class="box">
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
+		<span>1</span>
+	</div>
+	<div class="btn">
+		<button id="DLR">DLR</button>
+		<button id="LRD">LRD</button>
+		<input type="text" id="text">
+		<button id="search">查找</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var org=document.getElementById('origin')
+	var boxs=org.getElementsByTagName('div');
+	for (var i = 0; i < boxs.length; i++) {
+		var span=document.createElement('span');
+		var data=Math.floor(Math.random()*10);
+		span.innerHTML=data;
+		boxs[i].appendChild(span);
+	}
+</script>
+<script src="2-8.js"></script>
+</html>
